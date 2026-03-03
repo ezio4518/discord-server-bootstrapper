@@ -21,7 +21,9 @@ export const loadAppConfig = (cwd = process.cwd()): AppConfig => {
 
   const envParsed = envSchema.safeParse(process.env);
   if (!envParsed.success) {
-    const message = envParsed.error.issues.map((issue) => issue.message).join(", ");
+    const message = envParsed.error.issues
+      .map((issue) => `${issue.path.join(".") || "env"}: ${issue.message}`)
+      .join(", ");
     throw new Error(`Invalid .env configuration: ${message}`);
   }
 

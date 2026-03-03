@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "Production-quality Discord server bootstrapper for gaming communities",
-  "main": "dist/cli.js",
+  "main": "dist/bot.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev:cli": "tsx src/cli.ts",
     "dev:bot": "tsx src/bot.ts",
     "start:cli": "node dist/cli.js",
-    "start:bot": "node dist/bot.js"
+    "start:bot": "node dist/bot.js",
+    "start": "node dist/bot.js"
   },
   "engines": {
     "node": ">=18.18.0"
