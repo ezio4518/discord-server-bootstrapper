@@ -1,0 +1,557 @@
+{
+  "serverName": "homies",
+  "roles": [
+    {
+      "key": "owner",
+      "name": "Owner",
+      "color": "#e74c3c",
+      "mentionable": false,
+      "permissions": ["Administrator"]
+    },
+    {
+      "key": "admin",
+      "name": "Admin",
+      "color": "#f39c12",
+      "mentionable": true,
+      "permissions": ["Administrator"]
+    },
+    {
+      "key": "mod",
+      "name": "Mod",
+      "color": "#3498db",
+      "mentionable": true,
+      "permissions": [
+        "KickMembers",
+        "BanMembers",
+        "ModerateMembers",
+        "MuteMembers",
+        "ManageMessages",
+        "ViewAuditLog"
+      ]
+    },
+    {
+      "key": "gameHost",
+      "name": "Game Host",
+      "color": "#2ecc71",
+      "mentionable": true,
+      "permissions": [
+        "ManageEvents",
+        "MoveMembers",
+        "MuteMembers",
+        "DeafenMembers",
+        "ManageChannels"
+      ]
+    },
+    {
+      "key": "eventManager",
+      "name": "Event Manager",
+      "color": "#1abc9c",
+      "mentionable": true,
+      "permissions": [
+        "ManageEvents",
+        "ManageChannels",
+        "ManageMessages",
+        "MoveMembers"
+      ]
+    },
+    {
+      "key": "member",
+      "name": "Member",
+      "color": "#95a5a6",
+      "mentionable": true,
+      "permissions": [
+        "ViewChannel",
+        "SendMessages",
+        "ReadMessageHistory",
+        "UseApplicationCommands",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "Stream"
+      ]
+    },
+    {
+      "key": "bots",
+      "name": "Bots",
+      "color": "#9b59b6",
+      "mentionable": false,
+      "permissions": [
+        "ViewChannel",
+        "SendMessages",
+        "ReadMessageHistory",
+        "EmbedLinks",
+        "AttachFiles",
+        "UseApplicationCommands",
+        "Connect",
+        "Speak"
+      ]
+    },
+    {
+      "key": "muted",
+      "name": "Muted",
+      "color": "#7f8c8d",
+      "mentionable": false,
+      "permissions": []
+    }
+  ],
+  "categories": [
+    {
+      "key": "start_here",
+      "name": "📌 START HERE",
+      "permissionOverwrites": [
+        {
+          "target": "muted",
+          "deny": [
+            "SendMessages",
+            "AddReactions",
+            "CreatePublicThreads",
+            "CreatePrivateThreads",
+            "SendMessagesInThreads"
+          ]
+        }
+      ],
+      "channels": [
+        {
+          "key": "welcome",
+          "type": "GUILD_TEXT",
+          "name": "welcome"
+        },
+        {
+          "key": "rules",
+          "type": "GUILD_TEXT",
+          "name": "rules",
+          "permissionOverwrites": [
+            {
+              "target": "@everyone",
+              "deny": [
+                "SendMessages",
+                "CreatePublicThreads",
+                "CreatePrivateThreads",
+                "SendMessagesInThreads"
+              ]
+            },
+            {
+              "target": "admin",
+              "allow": ["SendMessages"]
+            },
+            {
+              "target": "mod",
+              "allow": ["SendMessages"]
+            }
+          ]
+        },
+        {
+          "key": "server_guide",
+          "type": "GUILD_TEXT",
+          "name": "server-guide"
+        },
+        {
+          "key": "roles",
+          "type": "GUILD_TEXT",
+          "name": "roles"
+        },
+        {
+          "key": "announcements",
+          "type": "GUILD_TEXT",
+          "name": "announcements",
+          "permissionOverwrites": [
+            {
+              "target": "@everyone",
+              "deny": ["SendMessages"]
+            },
+            {
+              "target": "admin",
+              "allow": ["SendMessages"]
+            },
+            {
+              "target": "mod",
+              "allow": ["SendMessages"]
+            }
+          ]
+        },
+        {
+          "key": "changelog",
+          "type": "GUILD_TEXT",
+          "name": "changelog",
+          "permissionOverwrites": [
+            {
+              "target": "@everyone",
+              "deny": ["SendMessages"]
+            },
+            {
+              "target": "admin",
+              "allow": ["SendMessages"]
+            },
+            {
+              "target": "mod",
+              "allow": ["SendMessages"]
+            }
+          ]
+        },
+        {
+          "key": "faq",
+          "type": "GUILD_TEXT",
+          "name": "faq"
+        }
+      ]
+    },
+    {
+      "key": "hangout",
+      "name": "💬 COMMUNITY",
+      "permissionOverwrites": [
+        {
+          "target": "muted",
+          "deny": [
+            "SendMessages",
+            "AddReactions",
+            "CreatePublicThreads",
+            "CreatePrivateThreads",
+            "SendMessagesInThreads"
+          ]
+        }
+      ],
+      "channels": [
+        {
+          "key": "general",
+          "type": "GUILD_TEXT",
+          "name": "general",
+          "slowmode": 3
+        },
+        {
+          "key": "introductions",
+          "type": "GUILD_TEXT",
+          "name": "introductions",
+          "slowmode": 10
+        },
+        {
+          "key": "memes",
+          "type": "GUILD_TEXT",
+          "name": "memes"
+        },
+        {
+          "key": "bot_commands",
+          "type": "GUILD_TEXT",
+          "name": "bot-commands"
+        },
+        {
+          "key": "off_topic",
+          "type": "GUILD_TEXT",
+          "name": "off-topic"
+        }
+      ]
+    },
+    {
+      "key": "games",
+      "name": "🎮 GAMES",
+      "permissionOverwrites": [
+        {
+          "target": "muted",
+          "deny": [
+            "SendMessages",
+            "AddReactions",
+            "CreatePublicThreads",
+            "CreatePrivateThreads",
+            "SendMessagesInThreads"
+          ]
+        }
+      ],
+      "channels": [
+        {
+          "key": "game_chat",
+          "type": "GUILD_TEXT",
+          "name": "game-chat"
+        },
+        {
+          "key": "among_us",
+          "type": "GUILD_TEXT",
+          "name": "among-us"
+        },
+        {
+          "key": "skribbl",
+          "type": "GUILD_TEXT",
+          "name": "skribbl"
+        },
+        {
+          "key": "minecraft",
+          "type": "GUILD_TEXT",
+          "name": "minecraft"
+        },
+        {
+          "key": "valorant",
+          "type": "GUILD_TEXT",
+          "name": "valorant"
+        },
+        {
+          "key": "fortnite",
+          "type": "GUILD_TEXT",
+          "name": "fortnite"
+        },
+        {
+          "key": "party_games",
+          "type": "GUILD_TEXT",
+          "name": "party-games"
+        },
+        {
+          "key": "lfg",
+          "type": "GUILD_TEXT",
+          "name": "lfg",
+          "slowmode": 15
+        },
+        {
+          "key": "strategy_talk",
+          "type": "GUILD_TEXT",
+          "name": "strategy-talk"
+        }
+      ]
+    },
+    {
+      "key": "game_night",
+      "name": "🗓️ EVENTS",
+      "permissionOverwrites": [
+        {
+          "target": "muted",
+          "deny": [
+            "SendMessages",
+            "AddReactions",
+            "CreatePublicThreads",
+            "CreatePrivateThreads",
+            "SendMessagesInThreads"
+          ]
+        }
+      ],
+      "channels": [
+        {
+          "key": "schedule",
+          "type": "GUILD_TEXT",
+          "name": "schedule",
+          "permissionOverwrites": [
+            {
+              "target": "gameHost",
+              "allow": ["ManageChannels", "ManageEvents", "SendMessages"]
+            },
+            {
+              "target": "eventManager",
+              "allow": ["ManageChannels", "ManageEvents", "SendMessages"]
+            }
+          ]
+        },
+        {
+          "key": "polls",
+          "type": "GUILD_TEXT",
+          "name": "polls",
+          "permissionOverwrites": [
+            {
+              "target": "gameHost",
+              "allow": ["ManageChannels", "ManageEvents", "SendMessages"]
+            },
+            {
+              "target": "eventManager",
+              "allow": ["ManageChannels", "ManageEvents", "SendMessages"]
+            }
+          ]
+        },
+        {
+          "key": "results",
+          "type": "GUILD_TEXT",
+          "name": "results"
+        }
+      ]
+    },
+    {
+      "key": "support",
+      "name": "🧠 SUPPORT",
+      "permissionOverwrites": [
+        {
+          "target": "muted",
+          "deny": [
+            "SendMessages",
+            "AddReactions",
+            "CreatePublicThreads",
+            "CreatePrivateThreads",
+            "SendMessagesInThreads"
+          ]
+        }
+      ],
+      "channels": [
+        {
+          "key": "help_desk",
+          "type": "GUILD_TEXT",
+          "name": "help-desk"
+        },
+        {
+          "key": "bug_reports",
+          "type": "GUILD_TEXT",
+          "name": "bug-reports"
+        },
+        {
+          "key": "suggestions",
+          "type": "GUILD_TEXT",
+          "name": "suggestions",
+          "slowmode": 30
+        }
+      ]
+    },
+    {
+      "key": "admin",
+      "name": "🛠️ ADMIN",
+      "permissionOverwrites": [
+        {
+          "target": "@everyone",
+          "deny": ["ViewChannel"]
+        },
+        {
+          "target": "owner",
+          "allow": ["ViewChannel", "SendMessages"]
+        },
+        {
+          "target": "admin",
+          "allow": ["ViewChannel", "SendMessages"]
+        },
+        {
+          "target": "mod",
+          "allow": ["ViewChannel", "SendMessages"]
+        }
+      ],
+      "channels": [
+        {
+          "key": "mod_log",
+          "type": "GUILD_TEXT",
+          "name": "mod-log"
+        },
+        {
+          "key": "reports",
+          "type": "GUILD_TEXT",
+          "name": "reports"
+        },
+        {
+          "key": "bot_logs",
+          "type": "GUILD_TEXT",
+          "name": "bot-logs",
+          "permissionOverwrites": [
+            {
+              "target": "@everyone",
+              "deny": ["ViewChannel", "SendMessages"]
+            },
+            {
+              "target": "owner",
+              "allow": ["ViewChannel", "SendMessages"]
+            },
+            {
+              "target": "admin",
+              "allow": ["ViewChannel", "SendMessages"]
+            },
+            {
+              "target": "mod",
+              "allow": ["ViewChannel", "SendMessages"]
+            },
+            {
+              "target": "bots",
+              "allow": ["ViewChannel", "SendMessages", "ReadMessageHistory"]
+            }
+          ]
+        },
+        {
+          "key": "incidents",
+          "type": "GUILD_TEXT",
+          "name": "incidents"
+        },
+        {
+          "key": "staff_chat",
+          "type": "GUILD_TEXT",
+          "name": "staff-chat"
+        },
+        {
+          "key": "task_board",
+          "type": "GUILD_TEXT",
+          "name": "task-board"
+        }
+      ]
+    },
+    {
+      "key": "voice",
+      "name": "🔊 VOICE",
+      "permissionOverwrites": [
+        {
+          "target": "muted",
+          "deny": ["Connect", "Speak", "UseVAD", "Stream"]
+        }
+      ],
+      "channels": [
+        {
+          "key": "lobby_chill",
+          "type": "GUILD_VOICE",
+          "name": "Lobby (Chill)"
+        },
+        {
+          "key": "among_us_1",
+          "type": "GUILD_VOICE",
+          "name": "Among Us Room 1",
+          "userLimit": 10
+        },
+        {
+          "key": "among_us_2",
+          "type": "GUILD_VOICE",
+          "name": "Among Us Room 2",
+          "userLimit": 10
+        },
+        {
+          "key": "skribbl_room",
+          "type": "GUILD_VOICE",
+          "name": "Skribbl Room",
+          "userLimit": 12
+        },
+        {
+          "key": "party_room",
+          "type": "GUILD_VOICE",
+          "name": "Party Room",
+          "userLimit": 16
+        },
+        {
+          "key": "duo_room",
+          "type": "GUILD_VOICE",
+          "name": "Duo Room",
+          "userLimit": 2
+        },
+        {
+          "key": "trio_room",
+          "type": "GUILD_VOICE",
+          "name": "Trio Room",
+          "userLimit": 3
+        },
+        {
+          "key": "squad_room",
+          "type": "GUILD_VOICE",
+          "name": "Squad Room",
+          "userLimit": 4
+        },
+        {
+          "key": "screenshare",
+          "type": "GUILD_VOICE",
+          "name": "Screenshare",
+          "permissionOverwrites": [
+            {
+              "target": "@everyone",
+              "allow": ["Connect", "Speak", "Stream"]
+            }
+          ]
+        },
+        {
+          "key": "study_focus",
+          "type": "GUILD_VOICE",
+          "name": "Study / Focus"
+        },
+        {
+          "key": "afk",
+          "type": "GUILD_VOICE",
+          "name": "AFK"
+        },
+        {
+          "key": "create_room",
+          "type": "GUILD_VOICE",
+          "name": "➕ Create Room"
+        }
+      ]
+    }
+  ],
+  "emojis": []
+}
